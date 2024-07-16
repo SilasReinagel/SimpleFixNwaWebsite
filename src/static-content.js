@@ -9,19 +9,17 @@ export const pages = [
 
 const address = (line1, city, state, zip5, mapLink) => ({ line1, city, state, zip5, mapLink, toString: () => `${line1}, ${city}, ${state}, ${zip5}`});
 const site = ({
-    name: 'Site Name',
-    owner: 'Site Owner',
-    slogan: 'We are great at business!',
+    name: 'A Simple Fix NWA',
+    shortDescription: 'A Simple Fix - Bella Vista, Bentonville, Rogers, Pea Ridge',
+    owner: 'Joshua Hastings',
+    slogan: 'Professional handyman services at your doorstep!',
     email: 'aaa@abc.com',
     logo: './images/logo.png',
     logoMobile: './images/logo.png',
     address: address("123 Main Street", "City", "ST", "12345", ""),
-    contactPrompt: 'Send us a message',
+    contactPrompt: 'What can I help you with?',
     social: {
-        // steam: '',
-        // twitter: '',
-        // itchio: '',
-        // reddit: ''
+      //facebook: '',
     }
   });
   

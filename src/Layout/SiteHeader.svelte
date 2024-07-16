@@ -31,7 +31,7 @@
     align-items: center;
     align-content: center;
     background-color: var(--header-background-color);
-    height: 82px;
+    height: 120px;
     padding: 0 16px;
   }
 

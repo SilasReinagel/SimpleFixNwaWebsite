@@ -12,7 +12,7 @@
 
     <SingleColorSocialLinks/>
 
-    <p class="small-text">App by: <a href="http://www.silasreinagel.com" class="small-text">Silas Reinagel</a></p>
+    <p class="small-text">Site by: <a href="http://www.silasreinagel.com" class="small-text">Silas Reinagel</a></p>
   </div>
 </footer>
 
