@@ -1,6 +1,7 @@
 <script>
   let sidebarOpen = false;
 
+  import PhoneNumberLink from '../Elements/PhoneNumberLink.svelte';
   import HamburgerIcon from '../Elements/HamburgerIcon.svelte';
   import SiteSidebar from './SiteSidebar.svelte';
 
@@ -8,31 +9,58 @@
 </script>
 
 <header>
-  <a href="." class="logo">
-    <div class="logo-img">
-      <img src={company.logo} alt="Logo"/>
-    </div>
-    <h1>{company.name}</h1>
-  </a>
-  <SiteSidebar bind:open={sidebarOpen}/>
-  <nav class="navbar tablet-hidden">
-    {#each pages as page}
-      <a class="navlink decor-font" href={page.href}>{page.name}</a>
-    {/each}
-  </nav>
-  <HamburgerIcon bind:open={sidebarOpen}/>
+  <div class="row top">
+    <a href="." class="logo">
+      <div class="logo-img">
+        <img src={company.logo} alt="Logo"/>
+      </div>
+      <h1>{company.name}</h1>
+    </a>
+    <SiteSidebar bind:open={sidebarOpen}/>
+    <nav class="navbar tablet-hidden">
+      {#each pages.filter(page => page.showInMainNav) as page}
+        <a 
+          class="navlink decor-font" 
+          href={page.href} 
+          on:click|preventDefault={() => {
+            if (page.scrollTo !== undefined) {
+              document.getElementById(page.scrollTo).scrollIntoView({ behavior: 'smooth' });
+            } else {
+              window.location.href = page.href;
+            }
+          }}
+        >
+          {page.name}
+        </a>
+      {/each}
+    </nav>
+    <HamburgerIcon bind:open={sidebarOpen}/>
+  </div>
+  <PhoneNumberLink />
 </header>
 
 <style>
   header {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
     align-content: center;
     background-color: var(--header-background-color);
     height: 120px;
     padding: 0 16px;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+  }
+
+  .top {
+    height: 68px;
   }
 
   h1 {
