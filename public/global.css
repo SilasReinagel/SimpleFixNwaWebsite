@@ -7,10 +7,10 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
   --primary-color-light: #454545;
   --primary-color-hover: #454545;
   --primary-background-color: #fff;
-  --secondary-color: #29C4F8;
-  --secondary-color-hover: #3CD2F9;
-  --secondary-color-press: #4AF3F8;
-  --alternate-color:#00dce8;
+  --secondary-color: #2F4F4F;
+  --secondary-color-hover: #2F9F4F;
+  --secondary-color-press: #2FCF4F;
+  --alternate-color:#2F4F4F;
   --alternate-background-color: #17111a;
   --alternate-color-light:#00dce8;
   --banner-color: #1a1e75;
@@ -18,10 +18,10 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
   --footer-color: #fff;
   --footer-background-color: #121212;
   
-  --header-background-color: #FFFFFF;
-  --header-color: #29C4F8;
-  --header-color-hover: #3CD2F9;
-  --header-color-press: #4AF3F8;
+  --header-background-color: var(--primary-background-color);
+  --header-color: var(--secondary-color);
+  --header-color-hover: var(--secondary-color-hover);
+  --header-color-press: var(--secondary-color-press);
 }
 
 @font-face {
@@ -117,8 +117,8 @@ h1, h2 {
 p {
   font-family: 'Open Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 14px;
-  color: #9c9c9b;
-  line-height: 24px;
+  color: #8f8f89;
+  line-height: 20px;
 }
 
 * {

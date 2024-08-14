@@ -1,14 +1,11 @@
 <script>
-  let sidebarOpen = false;
-
   import PhoneNumberLink from '../Elements/PhoneNumberLink.svelte';
-  import HamburgerIcon from '../Elements/HamburgerIcon.svelte';
-  import SiteSidebar from './SiteSidebar.svelte';
+  import EmailLink from '../Elements/EmailLink.svelte';
 
   import company, { pages } from '../static-content.js';
 </script>
 
-<header>
+<header class="">
   <div class="row top">
     <a href="." class="logo">
       <div class="logo-img">
@@ -16,7 +13,6 @@
       </div>
       <h1>{company.name}</h1>
     </a>
-    <SiteSidebar bind:open={sidebarOpen}/>
     <nav class="navbar tablet-hidden">
       {#each pages.filter(page => page.showInMainNav) as page}
         <a 
@@ -34,10 +30,15 @@
         </a>
       {/each}
     </nav>
-    <HamburgerIcon bind:open={sidebarOpen}/>
   </div>
-  <PhoneNumberLink />
 </header>
+<div class="sticky-contact-links">
+  <div class="contact-links">
+    <PhoneNumberLink />
+    <EmailLink />
+  </div>
+</div>
+
 
 <style>
   header {
@@ -46,8 +47,21 @@
     align-items: center;
     align-content: center;
     background-color: var(--header-background-color);
-    height: 120px;
-    padding: 0 16px;
+    padding: 0 16px 8px;
+    margin: 0;
+    z-index: 1000;
+  }
+
+  @media (max-width: 600px) {
+    header {
+      padding: 2px 8px 8px;
+    }
+  }
+
+  .sticky-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
   }
 
   .row {
@@ -59,13 +73,15 @@
     width: 100%;
   }
 
-  .top {
-    height: 68px;
+  @media (max-width: 600px) {
+    .row.top {
+      justify-content: center;
+    }
   }
 
   h1 {
     color: var(--header-color);
-    margin: 10px;
+    margin-left: 10px;
   }
 
   .logo {
@@ -93,4 +109,45 @@
     color: var(--header-color-hover);
   }
 
+  .sticky-contact-links {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    padding: 2px 4px 4px;
+    background-color: var(--header-background-color) !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+  }
+
+  @media screen and (min-width: 600px) {
+    .contact-links {
+      flex-direction: row;
+      gap: 24px;
+      justify-content: center;
+    }
+
+    .sticky-contact-links {
+      padding: 2px 4px 8px;
+    }
+  }
+
+    /* The sticky class is added to the header with JS when it reaches its scroll position */
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%
+  }
+
+  /* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
+  .sticky + .content {
+      padding-top: 102px;
+    }
 </style>

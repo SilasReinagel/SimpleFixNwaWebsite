@@ -12,7 +12,7 @@
 
     <SingleColorSocialLinks/>
 
-    <p class="small-text">Site by: <a href="http://www.silasreinagel.com" class="small-text">Silas Reinagel</a></p>
+    <p class="small-text">Site by: <a href="http://www.silasreinagel.com" class="small-text footer-link">Silas Reinagel</a></p>
   </div>
 </footer>
 
@@ -25,6 +25,10 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+  }
+
+  .footer-link {
+    color: #80d4ff;
   }
 
   a {

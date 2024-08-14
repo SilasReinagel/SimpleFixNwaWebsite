@@ -3,7 +3,7 @@
 </script>
 
 <div class="bg-[var(--background)] p-8" id="contact">
-  <h2 class="text-center text-3xl font-bold mb-8">Contact us!</h2>
+  <h2 class="text-center text-3xl font-bold mb-8">Contact me!</h2>
   <div class="flex flex-col md:flex-row justify-between">
     <div class="md:w-1/2 mb-8 md:mb-0">
       <h3 class="text-xl font-semibold mb-4">Contact info:</h3>

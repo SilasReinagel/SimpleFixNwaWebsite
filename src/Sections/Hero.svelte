@@ -1,25 +1,27 @@
 <script>
-  import Container from '../Elements/Container.svelte';
+  import company from '../static-content';
+
+  const handleCTAClick = () => {
+    window.location.href = `tel:${company.phone}`;
+  }
 </script>
 
-<Container>
-  <section class="hero">
-    <div class="center-vh hero-content">
-      <div class="flex-column">
-        <h1>Fix Up Your Property with Expert Handyman Services in Northwest Arkansas</h1>
-        <p class="mb3">Experience top-notch maintenance and enhancement for your rental, vacation and home property, ensuring they always look their best.</p>
-        <button class="cta-button" on:click={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}>Schedule Your Fix Today!</button>
-      </div>
+<section class="hero">
+  <div class="center-vh hero-content">
+    <div class="flex-column">
+      <h1>Fix Up Your Property with Expert Handyman Services in Northwest Arkansas</h1>
+      <p class="mb3 desc">Experience top-notch maintenance and enhancement for your rental, vacation and home property, ensuring they always look their best.</p>
+      <button class="cta-button" on:click={handleCTAClick}>Call for your fix now!</button>
     </div>
-  </section>
-</Container>
+  </div>
+</section>
 
 <style>
   .hero {
     background-color: var(--primary-background-color);
     background-size: cover;
     background-position: center;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/hero2.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('/images/hero2.jpg');
 
     text-align: center;
     width: 100%;
@@ -39,19 +41,19 @@
       font-size: 3em;
     }
 
-    p {
+    .desc {
       padding: 0 6em;
     }
+  }
+
+  .desc {
+    font-size: 0.9em;
+    color: #a8b0a8;
   }
 
   h1 {
     color: #fff;
     font-size: 2em;
-  }
-
-  p {
-    font-size: 1.2em;
-    line-height: 1.2em;
   }
 
   .hero-content {
@@ -62,7 +64,7 @@
   }
 
   .cta-button {
-    background-color: var(--secondary-color);
+    background-color: #A34A28;
     color: var(--primary-background-color);
     border: none;
     padding: 0.75em 1.5em;
@@ -71,13 +73,14 @@
     transition: background-color 0.3s ease;
     max-width: 400px;
     margin: 0 auto;
+    border-radius: 4px;
   }
 
   .cta-button:hover {
-    background-color: var(--secondary-color-hover);
+    background-color: #B55332;
   }
 
   .cta-button:active {
-    background-color: var(--secondary-color-press);
+    background-color: #C05C3C;
   }
 </style>
