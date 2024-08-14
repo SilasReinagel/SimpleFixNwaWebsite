@@ -15,6 +15,16 @@ const replaceFs = (targetFile, from, to) => {
   }
 };
 
+// Meta Description
+
+let metaDescription = `\t<meta name="description" content="${site.description}" />\n`;
+replaceFs('./public/index.html', '\t<!-- Meta Description Slot -->', metaDescription);
+
+// Meta Keywords
+
+let metaKeywords = `\t<meta name="keywords" content="${site.keywords}" />\n`;
+replaceFs('./public/index.html', '\t<!-- Meta Keywords Slot -->', metaKeywords);
+
 // Twitter Card
 
 let twitterCard = "";

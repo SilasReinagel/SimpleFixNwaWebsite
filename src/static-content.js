@@ -15,7 +15,7 @@ const site = ({
     owner: 'A Simple Fix',
     slogan: 'Professional handyman services at your doorstep!',
     email: 'Joshua@asimplefixnwa.com',
-    logo: './images/logo3.png',
+    logo: './images/logo4.png',
     logoMobile: './images/logo4.png',
     address: address("", "Rogers", "AR", "72756", ""),
     contactPrompt: 'What can I help you with?',
