@@ -41,7 +41,6 @@
   }
 
   h2 {
-    color: var(--primary-color);
     font-size: 2.5em;
     margin-bottom: 1em;
   }
@@ -61,7 +60,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    gap: 48px;
+    gap: 48px, 16px;
     flex-wrap: wrap;
   }
 
@@ -73,6 +72,10 @@
 
   .contact-info {
     width: 100%;
+  }
+
+  p {
+    margin-top: 0px;
   }
 
   @media (min-width: 768px) {

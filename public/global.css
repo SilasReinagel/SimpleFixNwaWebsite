@@ -53,7 +53,7 @@ html, body, a  {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Header', 'Times New Roman', Times, serif;
-  color: var(--primary-color);
+  color: var(--header-color);
   letter-spacing: 0.05em;
 }
 

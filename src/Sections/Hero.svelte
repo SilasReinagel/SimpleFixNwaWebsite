@@ -25,7 +25,7 @@
 
     text-align: center;
     width: 100%;
-    height: calc(100vh - 120px);
+    height: calc(100vh - 100px);
     color: #fff;
     display: flex;
     justify-content: center;
@@ -53,7 +53,7 @@
 
   h1 {
     color: #fff;
-    font-size: 2em;
+    font-size: 1.8em;
   }
 
   .hero-content {
@@ -82,5 +82,12 @@
 
   .cta-button:active {
     background-color: #C05C3C;
+  }
+
+  .flex-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.6em;
   }
 </style>

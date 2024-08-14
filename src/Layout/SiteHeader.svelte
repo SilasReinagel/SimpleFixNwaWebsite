@@ -6,28 +6,35 @@
 </script>
 
 <header class="">
-  <div class="row top">
+  <div class="row">
     <a href="." class="logo">
-      <div class="logo-img">
+      <div class="logo-img mobile-hidden">
         <img src={company.logo} alt="Logo"/>
       </div>
-      <h1>{company.name}</h1>
+      <h1 class="company-name">{company.name}</h1>
     </a>
     <nav class="navbar tablet-hidden">
       {#each pages.filter(page => page.showInMainNav) as page}
-        <a 
-          class="navlink decor-font" 
-          href={page.href} 
-          on:click|preventDefault={() => {
-            if (page.scrollTo !== undefined) {
-              document.getElementById(page.scrollTo).scrollIntoView({ behavior: 'smooth' });
-            } else {
-              window.location.href = page.href;
-            }
-          }}
-        >
-          {page.name}
-        </a>
+      <a 
+      class="navlink decor-font" 
+      href={page.href} 
+      on:click|preventDefault={() => {
+        if (page.scrollTo !== undefined) {
+          const element = document.getElementById(page.scrollTo);
+          const offset = 64; // Adjust this value as needed
+          const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+          const offsetPosition = elementPosition - offset;
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        } else {
+          window.location.href = page.href;
+        }
+      }}
+    >
+      {page.name}
+    </a>
       {/each}
     </nav>
   </div>
@@ -47,21 +54,15 @@
     align-items: center;
     align-content: center;
     background-color: var(--header-background-color);
-    padding: 0 16px 8px;
+    padding: 8px 16px;
     margin: 0;
     z-index: 1000;
   }
 
   @media (max-width: 600px) {
     header {
-      padding: 2px 8px 8px;
+      padding: 8px 8px 2px 8px;
     }
-  }
-
-  .sticky-header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
   }
 
   .row {
@@ -73,25 +74,27 @@
     width: 100%;
   }
 
-  @media (max-width: 600px) {
-    .row.top {
-      justify-content: center;
-    }
-  }
-
   h1 {
     color: var(--header-color);
-    margin-left: 10px;
+    margin: 0;
+  }
+
+  .company-name {
+    width: 100%;
   }
 
   .logo {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-items: center;
     max-height: 92px;
+    width: 100%;
   }
 
   .logo-img {
     width: 48px;
+    margin-right: 12px;
   }
 
   .navlink {
@@ -139,15 +142,10 @@
     }
   }
 
-    /* The sticky class is added to the header with JS when it reaches its scroll position */
-  .sticky {
-    position: fixed;
-    top: 0;
-    width: 100%
-  }
-
-  /* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
-  .sticky + .content {
-      padding-top: 102px;
+  @media (max-width: 600px) {
+    .company-name {
+      text-align: center;
+      margin: 0;
     }
+  }
 </style>

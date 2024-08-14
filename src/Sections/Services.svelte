@@ -47,7 +47,7 @@
 
 <Container>
   <div id="services"/>
-  <div class="bg-[var(--background)] text-[var(--foreground)] py-12 mb-8">
+  <div class="bg-[var(--background)] py-12 mb-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-3xl font-bold text-center mb-8 mt-8">Services</h2>
       <div class="flex flex-wrap gap-8 w-full center-h flex-center">
@@ -148,7 +148,7 @@
 }
 
 h2 {
-  color: var(--primary-color);
+  color: var(--header-color);
   font-size: 2.5em;
   margin-bottom: 1em;
 }
