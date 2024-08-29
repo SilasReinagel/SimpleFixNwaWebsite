@@ -9,9 +9,9 @@
 <section class="hero">
   <div class="center-vh hero-content">
     <div class="flex-column">
-      <h1>Fix Up Your Property with Expert Handyman Services in Northwest Arkansas</h1>
-      <p class="mb3 desc">Experience top-notch maintenance and enhancement for your rental, vacation and home property, ensuring they always look their best.</p>
-      <button class="cta-button" on:click={handleCTAClick}>Call for your fix now!</button>
+      <h1>Expert Handyman Services in Northwest Arkansas</h1>
+      <p class="mb3 desc">Top-notch maintenance and enhancement for your rental, vacation, and home property in Bella Vista, Bentonville, Rogers, Lowell, and Pea Ridge.</p>
+      <button class="cta-button" on:click={handleCTAClick}>Call for Your Fix Now!</button>
     </div>
   </div>
 </section>

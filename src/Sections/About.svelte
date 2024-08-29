@@ -5,14 +5,14 @@
 </script>
 
 <Container>
-  <section class="about">
+  <section class="about" id="about">
     <div class="center-vh about-content">
       <div class="flex-row wrap">
         <div class="face-photo">
-          <img src="{company.facePhoto}" alt="Smiling Handyman" />
+          <img src="{company.facePhoto}" alt="Experienced Handyman in Northwest Arkansas" />
         </div>
         <div class="flex-column contact-info">
-          <h2>About Me</h2>
+          <h2>About Your NWA Handyman</h2>
           <p class="mb3">Hi there! I'm thrilled to welcome you to my handyman services. As a proud Christian and former Iraq Veteran, I bring a strong sense of integrity, discipline, and commitment to every project I undertake.</p>
           <p class="mb3">With years of experience in the field, I understand the importance of quality workmanship and attention to detail. Whether you need help with small repairs or larger renovation projects, I'm here to assist you with professionalism and care.</p>
           <p class="mb3">My mission is to serve our community with honesty and excellence, ensuring that your property is in the best possible condition. You can trust me to handle your handyman needs with the same dedication and respect that I bring to my own home.</p>

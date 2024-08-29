@@ -49,12 +49,12 @@
   <div id="services"/>
   <div class="bg-[var(--background)] py-12 mb-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-bold text-center mb-8 mt-8">Services</h2>
+      <h2 class="text-3xl font-bold text-center mb-8 mt-8">Handyman Services in Northwest Arkansas</h2>
       <div class="flex flex-wrap gap-8 w-full center-h flex-center">
         {#each services as service}
         <div class="flex flex-col items-center w-300">
           <div class="w-300 h-200">
-            <img src={service.img} alt="{service.title} service" class="w-full h-full object-cover mb-4" />
+            <img src={service.img} alt="{service.title} service in NWA" class="w-full h-full object-cover mb-4" />
           </div>
           <h3 class="text-xl font-semibold mb-0">{service.title}</h3>
           <p class="text-center">{service.description}</p>

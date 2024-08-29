@@ -5,13 +5,13 @@
   import company, { pages } from '../static-content.js';
 </script>
 
-<header class="">
+<header>
   <div class="row">
-    <a href="." class="logo">
+    <a href="." class="logo" aria-label="A Simple Fix - NWA Handyman Services">
       <div class="logo-img mobile-hidden">
-        <img src={company.logo} alt="Logo"/>
+        <img src={company.logo} alt="A Simple Fix Logo"/>
       </div>
-      <h1 class="company-name">{company.name}</h1>
+      <h1 class="company-name">{company.name} - NWA Handyman Services</h1>
     </a>
     <nav class="navbar tablet-hidden">
       {#each pages.filter(page => page.showInMainNav) as page}
