@@ -1,4 +1,7 @@
-# How to Fix a Sagging Gate: DIY Tips and Professional Solutions
+<script>
+  import Blog from '../Pages/Blog.svelte';
+
+  const post = `# How to Fix a Sagging Gate: DIY Tips and Professional Solutions
 
 A sagging gate can be more than just an eyesore—it can cause functionality issues and compromise your property's security. Whether you're a homeowner in Bella Vista, Bentonville, or anywhere in Northwest Arkansas, this guide will help you tackle gate repair and maintenance. For those who prefer professional assistance, we'll also discuss how A Simple Fix can provide expert handyman services for your peace of mind.
 
@@ -76,4 +79,7 @@ Don't let a sagging gate compromise your property's appearance or security. Whet
 
 For professional gate repair, maintenance, or any handyman services in Bella Vista, Bentonville, or Northwest Arkansas, contact A Simple Fix today. Their team of skilled professionals is ready to help you with all your property maintenance needs, from gate repairs to comprehensive rental property upkeep.
 
-Remember, a well-maintained gate not only enhances your property's curb appeal but also ensures the safety and security of your home or rental property. Whether you're a DIY enthusiast or prefer to leave it to the experts, taking care of your gate is an investment in your property's value and functionality.
+Remember, a well-maintained gate not only enhances your property's curb appeal but also ensures the safety and security of your home or rental property. Whether you're a DIY enthusiast or prefer to leave it to the experts, taking care of your gate is an investment in your property's value and functionality.`
+</script>
+
+<Blog markdownContent={post} />

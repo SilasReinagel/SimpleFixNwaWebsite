@@ -3,6 +3,7 @@
   import EmailLink from '../Elements/EmailLink.svelte';
 
   import company, { pages } from '../static-content.js';
+  import { navigateTo } from '../router';
 </script>
 
 <header>
@@ -29,7 +30,7 @@
             behavior: 'smooth'
           });
         } else {
-          window.location.href = page.href;
+          navigateTo(page.href);
         }
       }}
     >
