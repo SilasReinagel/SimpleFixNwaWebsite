@@ -1,3 +1,4 @@
+// @ts-check
 import svelte from 'rollup-plugin-svelte';
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
@@ -5,6 +6,8 @@ import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 import sveltePreprocess from 'svelte-preprocess';
 import css from 'rollup-plugin-css-only';
+import { string } from 'rollup-plugin-string';
+import copy from 'rollup-plugin-copy';
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -54,8 +57,18 @@ export default {
 		commonjs(),
 
 		!production && serve(),
-		!production && livereload('public'),
-		production && terser()
+		!production && livereload({ watch: 'public' }),
+		production && terser(),
+
+		string({
+			include: '**/*.md'
+		}),
+		copy({
+			targets: [
+				{ src: 'src/content/services/*.md', dest: 'public/content/services' },
+				{ src: 'src/content/blog/*.md', dest: 'public/content/blog' }
+			]
+		})
 	],
 	watch: {
 		clearScreen: false

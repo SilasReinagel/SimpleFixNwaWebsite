@@ -3,8 +3,12 @@
   import { routePath, navigateTo } from './router';
   import DefaultLayout from './Layout/DefaultLayout.svelte';
   import { pages } from './static-content';
+  import ServiceDetail from './Services/[slug].svelte';
+  import BlogPost from './Blog/[slug].svelte';
+  import NotFound from './NotFound.svelte';
 
   let CurrentComponent;
+  let params = {};
 
   const routes = {};
   pages.forEach(page => {
@@ -14,20 +18,39 @@
   const handleNavigation = () => {
     const path = window.location.pathname;
     routePath.set(path);
-    console.log("Handling navigation", { path })
-    CurrentComponent = routes[path] || NotFound;
+    console.log("Handling navigation", { path });
+
+    if (path.startsWith('/service-detail/')) {
+      CurrentComponent = ServiceDetail;
+      params = { slug: path.split('/').pop() };
+    } else if (path.startsWith('/blog/')) {
+      CurrentComponent = BlogPost;
+      params = { slug: path.split('/').pop() };
+    } else {
+      CurrentComponent = routes[path] || NotFound;
+      params = {};
+    }
   }
 
   onMount(() => {
     routePath.subscribe((path) => {
-      console.log("Route path changed to", { path, routes })
-      handleNavigation()
+      console.log("Route path changed to", { path, routes });
+      handleNavigation();
     });
-    handleNavigation()
+    handleNavigation();
     window.addEventListener('popstate', handleNavigation);
+
+    // Intercept clicks on all internal links
+    document.body.addEventListener('click', (e) => {
+      const target = e.target.closest('a');
+      if (target && target.origin === window.location.origin) {
+        e.preventDefault();
+        navigateTo(target.pathname);
+      }
+    });
   });
 </script>
 
 <DefaultLayout>
-  <svelte:component this={CurrentComponent} />
+  <svelte:component this={CurrentComponent} {...params} />
 </DefaultLayout>

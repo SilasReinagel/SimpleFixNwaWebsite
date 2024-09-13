@@ -1,5 +1,6 @@
 <script>
   import Container from "../Elements/Container.svelte";
+  import { navigateTo } from "../router.js"
 
   const services = [
     {
@@ -56,7 +57,13 @@
           <div class="w-300 h-200">
             <img src={service.img} alt="{service.title} service in NWA" class="w-full h-full object-cover mb-4" />
           </div>
-          <h3 class="text-xl font-semibold mb-0">{service.title}</h3>
+          <h3 class="text-xl font-semibold mb-0">
+            {#if service.title === "Furniture assembly"}
+              <a class="text-xl font-semibold mb-0" href="/service-detail/furniture-assembly" on:click|preventDefault={() => navigateTo('/service-detail/furniture-assembly')}>{service.title}</a>
+            {:else}
+              {service.title}
+            {/if}
+          </h3>
           <p class="text-center">{service.description}</p>
         </div>
         {/each}
@@ -151,5 +158,9 @@ h2 {
   color: var(--header-color);
   font-size: 2.5em;
   margin-bottom: 1em;
+}
+
+a {
+  font-family: 'Header', 'Times New Roman', Times, serif;
 }
 </style>

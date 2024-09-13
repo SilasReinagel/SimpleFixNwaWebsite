@@ -5,9 +5,9 @@ import HowToFixASaggingGate from './Blogs/HowToFixASaggingGate.svelte';
 const DefaultPage = Home;
 export const pages = [
   { path: '/', href: '/', name: 'Home', component: DefaultPage, showInMainNav: false, scrollTo: undefined },
-  { path: '/services', href: '/index.html?page=home#services', name: 'Services', component: Home, showInMainNav: true, scrollTo: 'services' },
-  { path: '/blog', href: '/blog', name: 'Blog', component: BlogMenu, showInMainNav: false },
+  { path: '/services', href: '/#services', name: 'Services', component: Home, showInMainNav: true, scrollTo: 'services' },
   { path: '/blog/how-to-fix-a-sagging-gate-diy-tips', href: '/blog/how-to-fix-a-sagging-gate-diy-tips', name: 'How to Fix a Sagging Gate: DIY Tips', component: HowToFixASaggingGate, showInMainNav: false },
+  { path: '/blog', href: '/blog', name: 'Blog', component: BlogMenu, showInMainNav: false },
 ]
 
 const address = (line1, city, state, zip5, mapLink) => ({ line1, city, state, zip5, mapLink, toString: () => `${line1}, ${city}, ${state}, ${zip5}`});

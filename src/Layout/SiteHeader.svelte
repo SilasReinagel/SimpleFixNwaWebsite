@@ -8,7 +8,7 @@
 
 <header>
   <div class="row">
-    <a href="." class="logo" aria-label="A Simple Fix - NWA Handyman Services">
+    <a href="/" class="logo" aria-label="A Simple Fix - NWA Handyman Services">
       <div class="logo-img mobile-hidden">
         <img src={company.logo} alt="A Simple Fix Logo"/>
       </div>
