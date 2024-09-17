@@ -12,7 +12,7 @@
       <div class="logo-img mobile-hidden">
         <img src={company.logo} alt="A Simple Fix Logo"/>
       </div>
-      <h1 class="company-name">{company.name} - NWA Handyman Services</h1>
+      <h1 class="company-name">{company.name} Services</h1>
     </a>
     <nav class="navbar tablet-hidden">
       {#each pages.filter(page => page.showInMainNav) as page}
