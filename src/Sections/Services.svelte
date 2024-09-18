@@ -58,8 +58,12 @@
             <img src={service.img} alt="{service.title} service in NWA" class="w-full h-full object-cover mb-4" />
           </div>
           <h3 class="text-xl font-semibold mb-0">
-            {#if service.title === "Furniture assembly"}
+            {#if service.title === "Furniture assembly" }
               <a class="text-xl font-semibold mb-0" href="/service-detail/furniture-assembly" on:click|preventDefault={() => navigateTo('/service-detail/furniture-assembly')}>{service.title}</a>
+            {:else if service.title === "Property Watch"}
+              <a class="text-xl font-semibold mb-0" href="/service-detail/property-watch" on:click|preventDefault={() => navigateTo('/service-detail/property-watch')}>{service.title}</a>
+            {:else if service.title === "Woodworking"}
+              <a class="text-xl font-semibold mb-0" href="/service-detail/woodworking" on:click|preventDefault={() => navigateTo('/service-detail/woodworking')}>{service.title}</a>
             {:else}
               {service.title}
             {/if}

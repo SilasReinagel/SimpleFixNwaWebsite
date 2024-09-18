@@ -12,6 +12,22 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
-  
+  <url>
+    <loc>https://asimplefixnwa.com/service-detail/furniture-assembly</loc>
+    <lastmod>2024-09-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://asimplefixnwa.com/service-detail/property-watch</loc>
+    <lastmod>2024-09-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://asimplefixnwa.com/service-detail/woodworking</loc>
+    <lastmod>2024-09-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
