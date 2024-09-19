@@ -9,6 +9,7 @@
 
   let CurrentComponent;
   let params = {};
+  let canonicalUrl = '';
 
   const routes = {};
   pages.forEach(page => {
@@ -30,6 +31,9 @@
       CurrentComponent = routes[path] || NotFound;
       params = {};
     }
+
+    // Update canonical URL
+    canonicalUrl = `${window.location.origin}${path}`;
   }
 
   onMount(() => {
@@ -50,6 +54,10 @@
     });
   });
 </script>
+
+<svelte:head>
+  <link rel="canonical" href={canonicalUrl} />
+</svelte:head>
 
 <DefaultLayout>
   <svelte:component this={CurrentComponent} {...params} />
