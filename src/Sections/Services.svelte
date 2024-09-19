@@ -11,7 +11,8 @@
     {
       img: "/images/services/paint2.webp",
       title: "Painting",
-      description: "Whether you need a fresh coat of paint for your walls, ceilings, or cabinets, We can help you achieve the look you want. We can handle both interior and exterior painting projects."
+      description: "Whether you need a fresh coat of paint for your walls, ceilings, or cabinets, We can help you achieve the look you want. We can handle both interior and exterior painting projects.",
+      slug: "painting"
     },
     {
       img: "/images/services/landscaping.webp",
