@@ -26,7 +26,8 @@
     {
       img: "/images/services/furniture.webp",
       title: "Furniture assembly",
-      description: "If you have any furniture that needs to be assembled or disassembled, We can do it for you. We can work with different types of furniture, such as beds, sofas, tables, chairs, shelves, and more."
+      description: "If you have any furniture that needs to be assembled or disassembled, We can do it for you. We can work with different types of furniture, such as beds, sofas, tables, chairs, shelves, and more.",
+      slug: "furniture-assembly"
     },
     {
       img: "/images/services/doors.webp",
@@ -36,12 +37,14 @@
     {
       img: "/images/services/woodwork.webp",
       title: "Woodworking",
-      description: "If you need custom woodworking services, We can create and repair wooden structures and furniture. We can work on cabinets, shelves, decks, and more to meet your specific needs."
+      description: "If you need custom woodworking services, We can create and repair wooden structures and furniture. We can work on cabinets, shelves, decks, and more to meet your specific needs.",
+      slug: "woodworking"
     },
     {
       img: "/images/services/propertywatch.webp",
       title: "Property Watch",
-      description: "If you need someone to keep an eye on your property while you are away, We can provide property watch services. We can perform regular checks, maintenance, and ensure your property remains secure."
+      description: "If you need someone to keep an eye on your property while you are away, We can provide property watch services. We can perform regular checks, maintenance, and ensure your property remains secure.",
+      slug: "property-watch"
     }
   ];
 </script>
@@ -58,12 +61,14 @@
             <img src={service.img} alt="{service.title} service in NWA" class="w-full h-full object-cover mb-4" />
           </div>
           <h3 class="text-xl font-semibold mb-0">
-            {#if service.title === "Furniture assembly" }
-              <a class="text-xl font-semibold mb-0" href="/service-detail/furniture-assembly" on:click|preventDefault={() => navigateTo('/service-detail/furniture-assembly')}>{service.title}</a>
-            {:else if service.title === "Property Watch"}
-              <a class="text-xl font-semibold mb-0" href="/service-detail/property-watch" on:click|preventDefault={() => navigateTo('/service-detail/property-watch')}>{service.title}</a>
-            {:else if service.title === "Woodworking"}
-              <a class="text-xl font-semibold mb-0" href="/service-detail/woodworking" on:click|preventDefault={() => navigateTo('/service-detail/woodworking')}>{service.title}</a>
+            {#if service.slug}
+              <a class="text-xl font-semibold mb-0" 
+                 href="/service-detail/{service.slug}" 
+                 on:click={(e) => {
+                   e.preventDefault();
+                   navigateTo(`/service-detail/${service.slug}`);
+                 }}
+              >{service.title}</a>
             {:else}
               {service.title}
             {/if}

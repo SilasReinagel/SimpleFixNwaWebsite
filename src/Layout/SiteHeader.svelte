@@ -19,7 +19,8 @@
       <a 
       class="navlink decor-font" 
       href={page.href} 
-      on:click|preventDefault={() => {
+      on:click={(event) => {
+        event.preventDefault();
         if (page.scrollTo !== undefined) {
           const element = document.getElementById(page.scrollTo);
           const offset = 64; // Adjust this value as needed
