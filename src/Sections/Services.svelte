@@ -4,9 +4,10 @@
 
   const services = [
     {
-        img: "/images/services/appliance.jpg",
+      img: "/images/services/appliance.jpg",
       title: "Appliance Repair",
-      description: "If you have any appliances that need to be repaired, We can help you with that. We can handle various types of appliances, such as refrigerators, ovens, dishwashers, and more."
+      description: "If you have any appliances that need to be repaired, We can help you with that. We can handle various types of appliances, such as refrigerators, ovens, dishwashers, and more.",
+      slug: "appliance-repair"
     },
     {
       img: "/images/services/paint2.webp",
