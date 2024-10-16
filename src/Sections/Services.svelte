@@ -16,11 +16,6 @@
       slug: "painting"
     },
     {
-      img: "/images/services/landscaping.webp",
-      title: "Landscaping",
-      description: "If you want to improve the appearance and functionality of your outdoor space, We can assist you with various landscaping tasks. We can mow your lawn, trim your hedges, plant flowers, and more."
-    },
-    {
       img: "/images/services/drywall.webp",
       title: "Drywall repair",
       description: "If you have any cracks, holes, or water damage on your drywall, We can fix them for you. We can patch, tape, sand, and paint your drywall to make it look as good as new."
@@ -42,12 +37,6 @@
       description: "If you need custom woodworking services, We can create and repair wooden structures and furniture. We can work on cabinets, shelves, decks, and more to meet your specific needs.",
       slug: "woodworking"
     },
-    {
-      img: "/images/services/propertywatch.webp",
-      title: "Property Watch",
-      description: "If you need someone to keep an eye on your property while you are away, We can provide property watch services. We can perform regular checks, maintenance, and ensure your property remains secure.",
-      slug: "property-watch"
-    }
   ];
 </script>
 

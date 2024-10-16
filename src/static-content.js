@@ -21,7 +21,7 @@ const site = ({
     email: 'Joshua@asimplefixnwa.com',
     logo: '/images/logo4.png',
     logoMobile: '/images/logo4.png',
-    address: address("", "Rogers", "AR", "72756", ""),
+    address: address("12674 Oak Valley Rd", "Rogers", "AR", "72756", ""),
     contactPrompt: 'What can I help you with?',
     phone: '(479) 426-8304',
     social: {
